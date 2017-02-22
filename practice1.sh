@@ -22,3 +22,5 @@ if [ "$BIRTHDAY" == "Monday" ] ; then
 else
     echo "BIRTHDAY is incorrect - please retry"
 fi
+
+#finished
