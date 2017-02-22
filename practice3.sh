@@ -27,15 +27,15 @@ echo ${STRING[@]/%be/be on $(date +%Y-%m-%d)} # to be or not to be on 2017-02-21
 BUFFETT="Life is like a snowball. The important thing is finding wet snow and a really long hill."
 
     # write your code here
-    ISAY=$BUFFETT
-    change1=${ISAY[@]/snow/foot}
-    change2=${change1[@]// snow/}
-    change3=${change2[@]/finding/getting}
-    loc=`expr index "$change3" 'w'`
-    ISAY=${change3::$loc+2}
 
-# Test code - do not modify
+    change1="${BUFFETT[@]/snow/foot}" #replace the first occurrence of 'snow' with 'foot'
+    change2="${change1[@]// snow/}" #delete the second occurrence of 'snow'
+    change3="${change2[@]/finding/getting}" #replace 'finding' with 'getting'
+    loc=`expr index "$change3" 'w'` #delete all characters following 'wet'
+    ISAY=${change3::$loc+2} #need quotations above for each variable value
+
+
 echo "Warren Buffett said:"
 echo $BUFFETT
 echo "and I say:"
-echo "$ISAY"
+echo $ISAY
